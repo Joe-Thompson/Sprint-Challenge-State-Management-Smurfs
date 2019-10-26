@@ -10,7 +10,7 @@ mapDispatchToProps allows each component to use state.  The store is known as a 
 that is where we store our initial immutable state.
 Actions are how we send payloads to the redux store through dispatch to tell our reducers what to do with our state.
 Reducers are pure functions that take either the initial state or current state and an action, the action tells
-the reducer what switch statement to run.
+the getReducer what switch statement to run.
 
 What is the difference between Application state and Component state? When would be a good time to use one over the other?
 Application state is like context API, which it is global and any component can access it, where as component state is local,
@@ -24,4 +24,4 @@ Thunk gives us access to the dispatch prop that allows us to set off actions tha
 What is your favorite state management system you've learned and this sprint? Please explain why!
 My favorite system would be Redux, I know, I know...why, oh why would I say that? Redux does take time to set up,
 but once in place I feel like I have total control of my state, what pieces are going where, what exactly I want
-my state to be in when I return a clone from the reducer, and of course the immutability that redux offers.
+my state to be in when I return a clone from the getReducer, and of course the immutability that redux offers.

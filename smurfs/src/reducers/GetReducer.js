@@ -1,4 +1,4 @@
-import {GET_SMURF_ERROR, GET_SMURF_START, GET_SMURF_SUCCESS} from "../actions/Actions";
+import {GET_SMURF_ERROR, GET_SMURF_START, GET_SMURF_SUCCESS} from "../actions/GetActions";
 
 const initialState = {
     smurf: [{
@@ -13,7 +13,7 @@ const initialState = {
 // our finite state machine written out in code--
 // all the possible states, and actions that can be taken
 // which result in a new state.
-export function reducer(state = initialState, action) {
+export function getReducer(state = initialState, action) {
     switch (action.type) {
         case GET_SMURF_START:
             return {
