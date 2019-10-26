@@ -1,0 +1,27 @@
+What problem does the context API help solve?
+Helps solves prop drilling by allowing our state to be shared globally with all components
+
+In your own words, describe actions, reducers and the store and their role in Redux.
+What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+A redux store is where each component will pull what pieces of state it needs, the store acts as a kinda context API
+where the data is globally shared and with the use of the connect function as well as mapStateToProps and
+mapDispatchToProps allows each component to use state.  The store is known as a ‘single source of truth’ because
+that is where we store our initial immutable state.
+Actions are how we send payloads to the redux store through dispatch to tell our reducers what to do with our state.
+Reducers are pure functions that take either the initial state or current state and an action, the action tells
+the reducer what switch statement to run.
+
+What is the difference between Application state and Component state? When would be a good time to use one over the other?
+Application state is like context API, which it is global and any component can access it, where as component state is local,
+and can only be updated in the component that the state lives in.  Things like theme, user settings should be set at the
+Application level, where state that is only read in one component should be localized to that component.
+
+Describe redux-thunk, what does it allow us to do? How does it change our action-creators?
+Redux thunk is middleware that allows you to write action creators that return a function instead of an action.
+Thunk gives us access to the dispatch prop that allows us to set off actions that will be asynchronous.
+
+What is your favorite state management system you've learned and this sprint? Please explain why!
+My favorite system would be Redux, I know, I know...why, oh why would I say that? Redux does take time to set up,
+but once in place I feel like I have total control of my state, what pieces are going where, what exactly I want
+my state to be in when I return a clone from the reducer, and of course the immutability that redux offers.
