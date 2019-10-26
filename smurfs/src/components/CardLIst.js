@@ -6,7 +6,6 @@ const CardList = (props) => {
     console.log(props);
     return (
         <div>
-            <p> hey you guys </p>
             {props.village.smurf.map((item, index) => {
                return <Card key={index} smurf={item} index={index}/>
             })}

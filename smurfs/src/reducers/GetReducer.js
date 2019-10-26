@@ -10,9 +10,6 @@ const initialState = {
     error: null
 };
 
-// our finite state machine written out in code--
-// all the possible states, and actions that can be taken
-// which result in a new state.
 export function getReducer(state = initialState, action) {
     switch (action.type) {
         case GET_SMURF_START:

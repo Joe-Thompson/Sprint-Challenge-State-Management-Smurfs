@@ -9,7 +9,7 @@ const App = (props) => {
 
     useEffect(() => {
         props.getSmurfs();
-    }, []);
+    },[]);
 
     return (
         <div className="App">
@@ -23,16 +23,11 @@ const App = (props) => {
     );
 };
 
-function mapStateToProps(state) {
-    return {
-        name: state
-    };
-}
 const mapDispatchToProps = {
     getSmurfs
 };
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(App);

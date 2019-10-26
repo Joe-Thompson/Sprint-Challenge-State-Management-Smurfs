@@ -1,26 +1,17 @@
 import axios from "axios";
-
-export const POST_SMURF_START = "FETCH_DOG_START";
-export const POST_SMURF_SUCCESS = "FETCH_DOG_SUCCESS";
-export const POST_SMURF_ERROR = "FETCH_DOG_ERROR";
+import { GET_SMURF_ERROR, GET_SMURF_SUCCESS, GET_SMURF_START } from "./GetActions";
 
 export function postSmurfs(smurf) {
-    // this is our "thunk" function. redux-thunk middleware
-    // automatically gives us access to the dispatcher as a parameter
     return dispatch => {
-        // we can kick off as many actions as we want,
-        // whenever we want. allows our action creator to be asyncronous.
-        dispatch({ type: POST_SMURF_START });
+        dispatch({ type: GET_SMURF_START });
 
         axios
             .post("http://localhost:3333/smurfs", smurf)
             .then(res => {
-                console.log(res.data);
-                dispatch({ type: POST_SMURF_SUCCESS, payload: res.data });
+                dispatch({ type: GET_SMURF_SUCCESS, payload: res.data });
             })
             .catch(err => {
-                // enter the "error" state
-                dispatch({ type: POST_SMURF_ERROR, payload: err });
+                dispatch({ type: GET_SMURF_ERROR, payload: err });
             });
     };
 }
