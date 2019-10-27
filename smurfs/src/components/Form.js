@@ -27,14 +27,18 @@ const Form = (props) => {
     return (
         <div>
             <form className='form' onSubmit={submitForm}>
-                <label htmlFor="name">Name your new Smurf</label>
+                <div>
+                <label htmlFor="name">Name your new Smurf </label>
                 <input className='input' type="text" onChange={handleChanges} name="name" placeholder='Please enter a name...'/>
-
-                <label htmlFor="height">Is your Smurf tall or short?</label>
+                </div>
+                <div>
+                <label htmlFor="height">How tall is your Smurf?</label>
                 <input className='input' type="text" onChange={handleChanges} id="height" name="height" placeholder='Please enter a number for your height...'/>
-
-                <label htmlFor="age">Is your Smurf old or young?</label>
+                </div>
+                <div>
+                <label htmlFor="age">How old is your Smurf?</label>
                 <input className='input' type="text" onChange={handleChanges} id="age" name="age" placeholder='Please enter a number for your age...'/>
+                </div>
                 <button onClick={submitForm} >Create New Smurf</button>
             </form>
         </div>

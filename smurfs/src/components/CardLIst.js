@@ -5,7 +5,7 @@ import Card from "./Card";
 const CardList = (props) => {
     console.log(props);
     return (
-        <div>
+        <div className='cardHolder'>
             {props.village.smurf.map((item, index) => {
                return <Card key={index} smurf={item} index={index}/>
             })}
